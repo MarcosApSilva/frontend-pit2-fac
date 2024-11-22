@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { AuthContext } from "../../contexts/authContext";
 import { Outlet } from 'react-router-dom'
 import { MyOrder } from '../../components/MyOrder'
@@ -18,6 +18,7 @@ export default function Main() {
   const handleLogout = () => {
     //console.log('logout');
     AuthContextType?.logout();
+    setLoading(false);
   }
   
 

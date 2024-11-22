@@ -26,8 +26,8 @@ const Register: React.FC = () => {
   const [usuario, setUsuario] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [imagem, setImagem] = useState('');
-  const [ativo, setAtivo] = useState('A');
+  //const [imagem, setImagem] = useState('');
+  //const [ativo, setAtivo] = useState('A');
   const [phone, setPhone] = useState('');
   const { register } = useAuth();
   const navigate = useNavigate();
@@ -36,6 +36,8 @@ const Register: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    const imagem = '';
+    const ativo = 'A';
     try {
       await register(email, password, usuario, phone, imagem, ativo);
       navigate('/'); // Redireciona após registro
@@ -75,6 +77,7 @@ const Register: React.FC = () => {
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
         />
+
         <Button variant="primary" type="submit" disabled={loading}>
           {loading ? 'Registrando...' : 'Registro'}
         </Button>
