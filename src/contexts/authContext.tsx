@@ -29,7 +29,7 @@ interface AuthProviderProps {
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const navigate = useNavigate();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  //const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -71,7 +71,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       const msg = JSON.stringify(response.data.user.usuario);
       alert(`Seja bem vindo(a): ${msg}`);
-      setIsAuthenticated(true);
+      //setIsAuthenticated(true);
       
 
       navigate('/');
@@ -156,7 +156,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const logout = (): void => {
     //console.log('Usuário desconectado');
-    setIsAuthenticated(false);
+    //setIsAuthenticated(false);
     localStorage.removeItem('usuario');
     localStorage.removeItem('user');
     localStorage.removeItem('token');

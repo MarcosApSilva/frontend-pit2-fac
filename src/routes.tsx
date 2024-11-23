@@ -55,7 +55,7 @@ export const AppRoutes: React.FC = () => {
   return (
     <AuthProvider>
     <Routes>
-      <Route path='/' element={<MainPage />}>
+      <Route path='/' element={<Private><MainPage /></Private>}>
         <Route path='/' element={<Private><CupcakesPage /></Private>} />
         <Route path='burgers' element={<Private><BurgersPage /></Private>} />
         <Route path='pizzas' element={<Private><PizzasPage /></Private>} />
